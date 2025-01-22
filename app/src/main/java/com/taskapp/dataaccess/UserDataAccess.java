@@ -64,14 +64,14 @@ public class UserDataAccess {
             while ((line = reader.readLine()) != null) {
                 String[] values = line.split(",");
                 //コードとRepUserが一致したら返す。
-                if (Integer.parseInt(values[0]) ==  num) {
-                    int code = Integer.parseInt(values[0]);
-                    String name = values[1];
-                    String email = values[2];
-                    String password = values[3];
-                    user = new User(code, name, email, password);
-                    
+                if (Integer.parseInt(values[0]) !=  num) {
+                    continue;
                 }
+                int code = Integer.parseInt(values[0]);
+                String name = values[1];
+                String email = values[2];
+                String password = values[3];
+                user = new User(code, name, email, password);
             }
         } catch (IOException e) {
             e.printStackTrace();
