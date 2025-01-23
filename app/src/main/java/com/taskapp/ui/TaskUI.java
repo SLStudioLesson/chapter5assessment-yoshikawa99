@@ -50,10 +50,10 @@ public class TaskUI {
 
         // メインメニュー
         boolean flg = true;
+        inputLogin();
         while (flg) {
             try {
                 // ログイン
-                inputLogin();
                 System.out.println("以下1~3のメニューから好きな選択肢を選んでください。");
                 System.out.println("1. タスク一覧, 2. タスク新規登録, 3. ログアウト");
                 System.out.print("選択肢：");
@@ -215,6 +215,7 @@ public class TaskUI {
                     continue;
                 }
                 taskLogic.changeStatus(Integer.parseInt(change), Integer.parseInt(selecr), loginUser);
+                break;
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (AppException e) {
